@@ -15,29 +15,34 @@ namespace FizzBuzz2
             List = list;
             List.Changed += new ChangeEventHandler(OnListChanged);
             List.Fizz += new FizzBuzzEventHandler(OnFizzFound);
-            List.Fizz += new FizzBuzzEventHandler(Print);
             List.Buzz += new FizzBuzzEventHandler(OnBuzzFound);
-            List.Buzz += new FizzBuzzEventHandler(Print);
             List.Fizzbuzz += new FizzBuzzEventHandler(OnFizzbuzzFound);
-            List.Fizzbuzz += new FizzBuzzEventHandler(Print);
         }
 
-        private void OnListChanged(object sender, EventArgs e)
+        //Tells the program to write 'list changed event recived'
+        //when the list is changed
+        public void OnListChanged(object sender, EventArgs e)
         {
             Console.WriteLine("list changed event received");
         }
-
-        private void OnFizzFound(object sender, EventArgs e)
+        
+        //Tells the program to write 'Fizz'
+        //when Fizz is found
+        public void OnFizzFound(object sender, EventArgs e)
         {
             Console.WriteLine("Fizz");
         }
 
-        private void OnBuzzFound(object sender, EventArgs e)
+        //Tells the program to write 'Buzz'
+        //when Buzz is found
+        public void OnBuzzFound(object sender, EventArgs e)
         {
             Console.WriteLine("Buzz");
         }
 
-        private void OnFizzbuzzFound(object sender, EventArgs e)
+        //Tells the program to write 'Fizzbuzz'
+        //when Fizzbuzz is found
+        public void OnFizzbuzzFound(object sender, EventArgs e)
         {
             Console.WriteLine("Fizzbuzz");
         }

@@ -15,6 +15,7 @@ namespace FizzBuzz2
             _List = new object[0];
         }
 
+        //Original Array
         public virtual void Array(object value)
         {
             object[] _newList = new object[_List.Length + 1];
@@ -69,6 +70,7 @@ namespace FizzBuzz2
             _List = _newList;
         }
 
+        //Function to clear
         public virtual void Clear()
         {
             _List = new object[0];

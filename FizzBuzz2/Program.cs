@@ -16,6 +16,7 @@ namespace FizzBuzz2
             //Create a class that listens for when the list is changed.
             EventListener listener = new EventListener(list);
 
+            //List of numbers that get sorted
             list.Add(1);
             list.Add(2);
             list.Add(3);
@@ -24,10 +25,10 @@ namespace FizzBuzz2
             list.Add(6);
             list.Add(15);
             list.Add(30);
+            list.Add(8);
             Console.WriteLine();
-            list.PrintList();
+            //Prints the sorted array
             list.FizzBuzz();
-            list.PrintBuzz();
 
             list.Clear();
             listener.Detatch();

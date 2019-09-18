@@ -15,38 +15,45 @@ namespace FizzBuzz2
         public FizzBuzzEventHandler Buzz;
         public FizzBuzzEventHandler Fizzbuzz;
 
+        //Calls list.Change
         protected virtual void OnChanged(EventArgs e)
         {
             Changed?.Invoke(this, e);
         }
 
+        //Calls list.Fizz
         protected virtual void OnFizz(EventArgs e)
         {
-            Changed?.Invoke(this, e);
+            Fizz?.Invoke(this, e);
         }
 
+        //Calls list.Buzz
         protected virtual void OnBuzz(EventArgs e)
         {
-            Changed?.Invoke(this, e);
+            Buzz?.Invoke(this, e);
         }
 
+        //Calls list.Fizzbuzz
         protected virtual void OnFizzbuzz(EventArgs e)
         {
-            Changed?.Invoke(this, e);
+            Fizzbuzz?.Invoke(this, e);
         }
 
+        //Calls the add functions
         public override void Add(object value)
         {
             base.Add(value);
             OnChanged(EventArgs.Empty);
         }
 
+        //Calls the clear functions
         public override void Clear()
         {
             base.Clear();
             OnChanged(EventArgs.Empty);
         }
 
+        //Fizzbuzz array
         public void FizzBuzz()
         {
             for (int i = 0; i < Length; i++)
@@ -68,20 +75,12 @@ namespace FizzBuzz2
                     Console.Write(this[i]);
                     OnBuzz(EventArgs.Empty);
                 }
+                //Class the remove functions
                 else
                 {
                     Remove(i);
                     i--;
                 }
-            }
-        }
-
-        public override object this[int index]
-        {
-            set
-            {
-                base[index] = value;
-                OnChanged(EventArgs.Empty);
             }
         }
     }
